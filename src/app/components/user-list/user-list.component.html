@@ -1,0 +1,31 @@
+<div *ngIf="users.length > 0; else noUsers" class="card my-5">
+    <div class="card-body">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Edit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users" >
+            <td>{{ user.name }}</td>
+            <td>{{user.email}}</td>
+            <td><i (click)="editUser(user)" class="fa fa-edit"></i> | <i (click)="deleteUser(user)" class="fa fa-trash"></i>
+            </td>
+            
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+ <ng-template #noUsers>
+   <div class="card bg-dark">
+      <div class="card-title text-center text-white py-4">
+          <h3 style="text-align: center;">No Users To Display </h3>
+      </div>
+   </div>
+ </ng-template>
+    
