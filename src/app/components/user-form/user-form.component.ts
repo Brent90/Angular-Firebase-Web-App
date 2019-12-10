@@ -12,6 +12,12 @@ export class UserFormComponent implements OnInit {
 
   @ViewChild('userForm', {static: false}) form: any;
 
+  user: User = {
+    id: '',
+    name: '',
+    email: ''
+  }
+
   constructor(private _userService: UserService, private _router: Router) { }
 
   ngOnInit() {
